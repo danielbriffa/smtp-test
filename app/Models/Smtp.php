@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\Encryptable;
 
 class Smtp extends Model
 {
     use CrudTrait;
+    use Encryptable;
+
     
     /*
     |--------------------------------------------------------------------------
@@ -22,6 +25,9 @@ class Smtp extends Model
     // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
+    protected $encryptable = [
+        'password'
+    ];
 
     /*
     |--------------------------------------------------------------------------
